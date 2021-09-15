@@ -195,6 +195,7 @@
       // if the new food location is where the snake currently is, generate a new food location
       snake.forEach(function has_snake_eaten_food(part) {
         const has_eaten = part.x == food_x && part.y == food_y;
+	document.getElementById('sound1').play();
         if (has_eaten) gen_food();
       });
     }
