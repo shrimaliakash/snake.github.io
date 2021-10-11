@@ -157,7 +157,12 @@
 //       snakeboard_ctx.strokestyle = 'darkgreen';
 //       snakeboard_ctx.fillRect(food_x, food_y, 10, 10);
 //       snakeboard_ctx.strokeRect(food_x, food_y, 10, 10);
-	 snakeboard_ctx.style.backgroundImage = "url('food.png')";
+	 var background = new Image();
+	 background.src = url('food.png');
+	 // Make sure the image is loaded first otherwise nothing will draw.
+	 background.onload = function(){
+		ctx.drawImage(background,0,0);   
+	 }
     }
 
     // Draw one snake part
